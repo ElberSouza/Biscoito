@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    font-family: "Montserrat", sans-serif;
+    font-size: 62, 5%;
+    color: #34355b;
+  }
+  
+  body {
+    background: linear-gradient(45deg, #190361 0%, #b0f 100%);
+    font-size: 1.6rem;
+  
+    /* Um jeito de centralizar a caixa ao centro: */
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  main {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2rem 5rem 0 rgba(0, 0, 0, 0.8);
+  
+    width: min(
+      42rem,
+      90%
+    ); /* Faz a caixa ficar flexível p/ widths menores q 42.8rem!*/
+    padding: 4.2rem;
+    margin: 1rem;
+  
+    animation: appear 2s; /* As img já comecam do ponto menor e depois aumentam*/
+  }
+  
+  /* SCREEN 1*/
+  .screen-1,
+  .screen-2 {
+    text-align: center;
+  }
+  
+  h1,
+  h2 {
+    font-family: Montserrat;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: normal;
+  
+    margin-bottom: 1.4rem;
+  }
+  
+  .screen-1 p {
+    font-family: "DM Sans";
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: normal;
+  
+    margin-bottom: 2rem;
+  }
+  
+  #btn-cookie {
+    --delay: 2s;
+    animation: appear-2 1s var(--delay) backwards; /* As img já comecam do ponto menor e depois aumentam*/
+  }
+  
+  #btn-cookie,
+  #btn-another-cookie {
+    border: none;
+    background-color: transparent;
+  
+    /* Centraliza os btns: */
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  
+  /* SCREEN 2 */
+  h3 {
+    margin: 2rem;
+    padding: 1rem;
+  }
+  
+  #fortune-message {
+    border-radius: 0.5rem;
+    background: #e4edf1;
+    box-shadow: 0 2rem 5rem 0 rgba(0, 0, 0, 0.8);
+  
+    color: #000;
+  
+    text-align: center;
+    font-family: "Dancing Script";
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: normal;
+  
+    --delay: 2s;
+    --startY: 100%;
+    animation: move 4s, appear-2 2s var(--delay) backwards;
+  }
+  
+  #fortune-cookie-opened {
+    animation: appear 2s;
+  }
+  
+  #btn-another-cookie {
+    border-radius: 4px;
+    background: #ff9500;
+    padding: 1.6rem;
+    margin-top: 1.6rem;
+  
+    color: #fff;
+    font-family: "DM Sans";
+    font-size: 1.2rem;
+    font-weight: 700;
+  
+    --delay: 5s;
+    animation: appear-2 2s var(--delay) backwards;
+  }
+  
+  #btn-another-cookie:hover {
+    background: #c97705;
+  }
+  
+  /* ANIMATIONS */
+  @keyframes move {
+    from {
+      transform: translateY(
+        var(--startY)
+      ); /* Cria uma varíavel p/ animação referente ao eixo y */
+    }
+  
+    to {
+    }
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes appear-2 {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+    }
+  }
+  
+  /* MEDIA QUERIES */
+  @media (max-width: 767px) {
+    main {
+      width: 16rem;
+      padding: 2rem;
+      margin: 0.2rem;
+    }
+  
+    h1,
+    h2 {
+      font-size: 1.4rem;
+    }
+  
+    .screen-1 p {
+      font-size: 1rem;
+    }
+  
+    #fortune-cookie-closed,
+    #fortune-cookie-opened {
+      width: 10rem;
+      height: auto;
+    }
+  
+    h3 {
+      margin: 0.2rem;
+      padding: 0.2rem;
+    }
+  
+    #fortune-message {
+      font-size: 1.2rem;
+    }
+  
+    #btn-another-cookie {
+      padding: 1.2rem;
+      font-size: 0.8rem;
+    }
+  }
